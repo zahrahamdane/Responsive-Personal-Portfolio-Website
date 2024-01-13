@@ -19,11 +19,22 @@ modalButton.forEach((modalButton, i) => {
 modalClose.forEach((modalClose) => {
   modalClose.addEventListener("click", () => {
     modal.forEach((modalRemove) => {
-    // Remove the 'active-modal' class from each of all modal
-    modalRemove.classList.remove("active-modal");
+      // Remove the 'active-modal' class from each of all modal
+      modalRemove.classList.remove("active-modal");
     });
   });
 });
 /*=============== SWIPER TESTIMONIAL ===============*/
 
 /*=============== SHOW SCROLL UP ===============*/
+const scrollUp = () => {
+  const scrollUp = document.getElementById("scroll-up");
+  if (scrollUp) {
+    // when the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+    window.scrollY >= 350
+      ? scrollUp.classList.add("show-scroll")
+      : scrollUp.classList.remove("show-scroll");
+  }
+};
+
+window.addEventListener("scroll", scrollUp);
